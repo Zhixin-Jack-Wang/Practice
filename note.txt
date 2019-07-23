@@ -1,0 +1,104 @@
+###media query
+//sm, insert in the middle of any style
+@media (min-width: 576px ){
+
+}
+//md
+@media (min-width: 768px ){
+
+}
+//lg
+@media (min-width: 992px ){
+
+}
+//xl2
+@media (min-width: 1200px ){
+
+}
+
+
+###container
+    container-fluid 
+    container
+
+###margin
+ all-around:   m-1, m-2, m-3, m-4, m-5   //4-48px
+ left:  ml
+ right: mr
+ top: mt
+ bottom: mb
+ auto(middle, need a width): m-auto 
+
+###responsive margin
+ class="ml-5 ml-sm-0 ml-md-5 ml-lg-0 ml-xl-5" //margin left according to device size
+
+###padding
+ same as margin
+
+###alignment
+text-left,text-center,text-right
+
+###text transform
+text-lowercase, text-uppercase, text-capitalize
+
+###weight, italics
+font-weight-bold, font-weight-normal, font-weight-light
+font-italics
+
+###fancy heading text
+display-1, display-2, display-3, display-4
+
+###fancy paragraph text
+lead
+
+###text-color
+text-primary, text-secondary(grey), 
+text-success(green), text-danger(red),
+ text-warning(yellow), text-info(teal), 
+ text-light, text-white, text-muted
+text-black,text-black-50(opacity)
+//blue, grey, 
+
+###bg
+bg-primary, bg-secondary(grey), 
+bg-success(green), bg-danger(red),
+ bg-warning(yellow), bg-info(teal), 
+ bg-light, bg-dark
+
+###display property
+d-block(100%), d-inline-block(what it needs),
+d-none
+    ##flex
+    d-flex, flex-row, flex- column, 
+    justify-content-<start|end|center|between|around>...
+    align-items-<start|end|center>
+
+###Button(type="button")
+    btn btn-sm btn-lg
+###Button Group(role="group")
+    btn-group
+
+###border-radius
+rounded-top,rounded-bottom,rounded-left,rounded-right
+rounded,rounded-circle
+
+###Shadow
+    shadow-sm, shadow-lg
+
+###Card
+    card
+        card-img-top
+        card-body
+            card-title
+            card-text
+    card-footer
+
+###Card Group
+    card-group      //group card together
+
+
+
+
+misc
+    border
+    w-100
