@@ -1,6 +1,6 @@
 import React from "react";
 import { Consumer } from "../../context";
-
+import Post from '../cards/Post';
 const Carousel = () => {
   return (
     <Consumer>
