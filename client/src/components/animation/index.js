@@ -74,14 +74,9 @@ const Comp2 = () => {
     </Spring>
   );
 };
+const [value, setValue] = useState({ showComponent3: false });
 const index = () => {
-  const [value, setValue] = useState({ showComponent3: false });
-  return (
-    <>
-      <Comp1 />
-      <Comp2 />
-    </>
-  );
+  return <div>hello</div>;
 };
 
 export default index;
