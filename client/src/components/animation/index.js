@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Spring } from "react-spring/renderprops";
+import { Spring, Transition, animated } from "react-spring/renderprops";
 const c1Style = {
   background: "steelblue",
   color: "white",
@@ -10,6 +10,11 @@ const c2Style = {
   color: "white",
   padding: "1.5rem"
 };
+const c3Style = {
+  background: "skyblue",
+  color: "white",
+  padding: "1.5rem"
+};
 
 const counter = {
   background: "#333",
@@ -17,6 +22,15 @@ const counter = {
   width: "100px",
   borderRadius: "50%",
   margin: "1rem auto"
+};
+
+const btn = {
+  background: "#333",
+  color: "#fff",
+  padding: "1rem.2rem",
+  border: "none",
+  textTransform: "uppercase",
+  margin: "15px, 0"
 };
 
 const Comp1 = () => {
@@ -52,7 +66,7 @@ const Comp1 = () => {
   );
 };
 
-const Comp2 = () => {
+const Comp2 = ({ toggle }) => {
   return (
     <Spring
       from={{ opacity: 0 }}
@@ -68,15 +82,55 @@ const Comp2 = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Perspiciatis, dolorem.
             </p>
+            <button style={btn} onClick={toggle}>
+              Toggle Component 3
+            </button>
           </div>
         </div>
       )}
     </Spring>
   );
 };
-const [value, setValue] = useState({ showComponent3: false });
-const index = () => {
-  return <div>hello</div>;
+
+const Comp3 = () => {
+  return (
+    <div style={c3Style}>
+      <h1>component3</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
+        dolorem.
+      </p>
+    </div>
+  );
 };
 
-export default index;
+const Animation = () => {
+  const [value, setValue] = useState({ showComponent3: false });
+  const toggle = e => {
+    setValue({ showComponent3: !value.showComponent3 });
+  };
+  return (
+    <>
+      <Comp1 />
+      <Comp2 toggle={toggle} />
+      <Transition
+        from={{ opacity: 0 }}
+        enter={{ opacity: 1 }}
+        leave={{ opacity: 0 }}
+        native
+        items={value.showComponent3}
+      >
+        {show =>
+          show &&
+          (props => (
+            <animated.div style={props}>
+              <Comp3 />
+            </animated.div>
+          ))
+        }
+      </Transition>
+    </>
+  );
+};
+
+export default Animation;
