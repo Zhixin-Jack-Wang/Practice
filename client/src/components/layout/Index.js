@@ -1,11 +1,12 @@
 import React from "react";
 import Card from "../cards/Card";
 import Carousel from "../cards/Carousel";
-import Animation from "../animation";
+import Anispring from "../animation/AniSpring.js";
+import AniCSS from "../animation/AniCSS.js";
 const Index = () => {
   return (
     <>
-      <Animation />
+      <AniCSS />
     </>
   );
 };

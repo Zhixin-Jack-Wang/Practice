@@ -1,0 +1,71 @@
+//###keyframe box
+.box {
+  background: red;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  animation-name: myanimation;
+  animation-duration: 3s;
+  animation-iteration-count: 2;
+  //   animation-delay: 1s;
+  //   animation-direction: reverse;
+  animation-direction: alternate;
+  //###speed ease-in:start fast end slow, ease-out:start slow end fast
+  animation-timing-function: ease-out;
+  //###stay as a circle
+  animation-fill-mode: forwards;
+}
+
+@keyframes myanimation {
+  0% {
+    background-color: red;
+    left: 0px;
+    top: 0px;
+    border-radius: 0 0 0 0;
+  }
+  25% {
+    background-color: black;
+    left: 300px;
+    top: 0px;
+    border-radius: 50% 0 0 0;
+  }
+  50% {
+    background-color: green;
+    left: 300px;
+    top: 300px;
+    border-radius: 50% 50% 0 0;
+  }
+  75% {
+    background-color: blue;
+    left: 0px;
+    top: 300px;
+    border-radius: 50% 50% 50% 0;
+  }
+  100% {
+    background-color: red;
+    left: 0px;
+    top: 0px;
+    border-radius: 50% 50% 50% 50%;
+  }
+}
+
+.box-transition {
+  background: black;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: auto;
+  top: 200px;
+  //###fade in and fade out
+  transition-property: background, border-radius, transform;
+  //transition-property: all;
+  //###delay for different animation
+  transition-duration: 1s, 3s;
+  //   transition-delay: 2s;
+  transition-timing-function: ease-in;
+  &:hover {
+    background: red;
+    border-radius: 50%;
+    transform: rotateY(180deg);
+  }
+}

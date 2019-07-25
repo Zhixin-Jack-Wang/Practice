@@ -104,7 +104,7 @@ const Comp3 = () => {
   );
 };
 
-const Animation = () => {
+const AniSpring = () => {
   const [value, setValue] = useState({ showComponent3: false });
   const toggle = e => {
     setValue({ showComponent3: !value.showComponent3 });
@@ -133,4 +133,4 @@ const Animation = () => {
   );
 };
 
-export default Animation;
+export default AniSpring;
