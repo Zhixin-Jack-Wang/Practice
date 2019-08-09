@@ -26,7 +26,6 @@ const Index = props => {
       console.log(error);
     } */
   };
-
   return (
     <>
       <Card />
@@ -51,12 +50,17 @@ const Index = props => {
         <h1>{props.newPost.title}</h1>
         <p>{props.newPost.body}</p>
       </div>
+
+      <div>
+        <button>Death</button>
+      </div>
     </>
   );
 };
 
 const mapStateToProps = state => ({
-  newPost: state.data.newPost
+  newPost: state.data.newPost,
+  posts: state.data.posts
 });
 Index.propTypes = {
   updatePosts: PropTypes.func,
