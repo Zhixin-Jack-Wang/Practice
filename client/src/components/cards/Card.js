@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { fetchPosts } from "../../actions/postAction";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import axios from "axios";
 
 class Card extends Component {
   componentDidMount() {
